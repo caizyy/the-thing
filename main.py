@@ -11,7 +11,7 @@ led.value(0)
 # Connecting to Wi-Fi
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect("your-wifi-network", "the-password")
+wlan.connect("idk", "yourpassword")
 
 # Waiting for the Wi-Fi connection to establish
 iteration = 0
@@ -39,7 +39,7 @@ def timeoutDetect(c):
 while wlan.isconnected():
     iscomplete = False
     tim = Timer(period=10000, mode=Timer.ONE_SHOT, callback=lambda t:timeoutDetect(iscomplete))
-    r = urequests.request("GET", "http://192.168.1.66/?memory=" + str(gc.mem_alloc()))
+    r = urequests.request("GET", "http://194.195.250.210/?memory=" + str(gc.mem_alloc()))
     if r.text == "on":
         led.value(1)
     else:
