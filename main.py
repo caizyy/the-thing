@@ -39,7 +39,7 @@ def timeoutDetect(c):
 while wlan.isconnected():
     iscomplete = False
     tim = Timer(period=10000, mode=Timer.ONE_SHOT, callback=lambda t:timeoutDetect(iscomplete))
-    r = urequests.request("GET", "http://192.168.1.66/?temp" + str(gc.mem_alloc()))
+    r = urequests.request("GET", "http://192.168.1.66/?memory=" + str(gc.mem_alloc()))
     if r.text == "on":
         led.value(1)
     else:
