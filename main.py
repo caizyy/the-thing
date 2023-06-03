@@ -19,7 +19,7 @@ for network in networks:
         continue
     print(": 📶", ssid, "\n🎯", strength)
 gc.collect()
-wlan.connect("Netcomm 1946", "Jahivuxoba")
+wlan.connect("wifi", "password")
 iteration = 0
 while not wlan.isconnected():
     utime.sleep(0.5)
